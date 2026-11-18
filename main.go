@@ -17,6 +17,7 @@ func main() {
 	mux.HandleFunc("GET /healthz", func(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte("ok"))
 	})
+	(&server{db: db}).routes(mux)
 
 	addr := envOr("LISTEN_ADDR", "127.0.0.1:8080")
 	log.Printf("listening on %s", addr)
