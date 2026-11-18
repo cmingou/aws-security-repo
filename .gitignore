@@ -1,0 +1,3 @@
+*.db
+/aws-security-repo
+/data/
